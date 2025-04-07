@@ -59,3 +59,12 @@ These models allow real-time emotion recognition from audio input, offering stud
 git clone https://github.com/your-username/student-presentation-feedback.git
 cd student-presentation-feedback
 pip install -r requirements.txt
+```
+
+---
+
+## 📸 Screenshot
+
+![Application Screenshot](gallery/screen.png)
+
+The application provides a user-friendly interface for uploading audio files and receiving detailed feedback on presentation skills.
