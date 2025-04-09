@@ -65,6 +65,6 @@ pip install -r requirements.txt
 
 ## 📸 Screenshot
 
-![Application Screenshot](gallery/screen.png)
+![Application Screenshot](Gallery/screen.png)
 
 The application provides a user-friendly interface for uploading audio files and receiving detailed feedback on presentation skills.

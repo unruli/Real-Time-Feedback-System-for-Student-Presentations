@@ -2,13 +2,23 @@ from transformers import pipeline
 import torch
 import numpy as np
 from typing import Dict, List
+import os
+from dotenv import load_dotenv
+import speechbrain as sb
+
+# Load environment variables
+load_dotenv()
+
+# Get Hugging Face token from environment variables
+hf_token = os.getenv("HUGGINGFACE_TOKEN")
 
 # Initialize emotion classifier
 try:
-    emotion_classifier = pipeline(
-        "audio-classification",
-        model="audeering/wav2vec2-large-robust-12-ft-emotion",
-        device=0 if torch.cuda.is_available() else -1
+    # Load SpeechBrain emotion recognition model
+    emotion_classifier = sb.pretrained.EncoderClassifier.from_hparams(
+        source="speechbrain/emotion-recognition-wav2vec2-IEMOCAP",
+        savedir="models/emotion_recognition",
+        run_opts={"device": "cuda" if torch.cuda.is_available() else "cpu"}
     )
 except Exception as e:
     print(f"Error loading emotion model: {str(e)}")
@@ -16,7 +26,7 @@ except Exception as e:
 
 def analyze_emotion(audio_path: str) -> Dict:
     """
-    Analyze emotional content of speech using Wav2Vec2 model.
+    Analyze emotional content of speech using SpeechBrain model.
     
     Args:
         audio_path (str): Path to the audio file
@@ -29,12 +39,12 @@ def analyze_emotion(audio_path: str) -> Dict:
             raise Exception("Emotion classifier not initialized")
             
         # Get emotion predictions
-        predictions = emotion_classifier(audio_path)
+        predictions = emotion_classifier.classify_file(audio_path)
         
         # Process predictions
         emotions = {}
-        for pred in predictions:
-            emotions[pred['label']] = pred['score']
+        for emotion, score in zip(predictions[1], predictions[0]):
+            emotions[emotion] = float(score)
             
         # Get dominant emotion
         dominant_emotion = max(emotions.items(), key=lambda x: x[1])
