@@ -44,12 +44,6 @@ The system includes an emotion detection module that analyzes vocal tone to iden
 - Angry
 - Neutral
 
-We currently support models like:
-
-- **SpeechBrain**: `speechbrain/emotion-recognition-wav2vec2-IEMOCAP`
-- **Hugging Face Transformers**: `audeering/wav2vec2-large-robust-12-ft-emotion`
-
-These models allow real-time emotion recognition from audio input, offering students deeper insight into how their tone may influence presentation delivery.
 
 ---
 
