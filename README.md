@@ -12,7 +12,7 @@ A smart feedback tool designed to analyze and improve students' oral presentatio
 
 ---
 
-## 🎯 Key Feature
+## 🎯 Key Features
 
 - **Speech Clarity Analysis** – Evaluate pronunciation, enunciation, and speech rate  
 - **Filler Word Detection** – Identify and count instances of words like *um*, *uh*, *like*, etc.  
