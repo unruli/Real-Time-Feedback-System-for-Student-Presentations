@@ -17,8 +17,6 @@ A smart feedback tool designed to analyze and improve students' oral presentatio
 - **Speech Clarity Analysis** – Evaluate pronunciation, enunciation, and speech rate  
 - **Filler Word Detection** – Identify and count instances of words like *um*, *uh*, *like*, etc.  
 - **Pacing Feedback** – Analyze speech tempo and detect monotony or inconsistency  
-- **Tone and Emotion Recognition** – Detect vocal tone and emotional undertones  
-- **Real-time or Post-hoc Feedback** – Use in live sessions or upload recordings  
 
 ---
 
@@ -28,7 +26,6 @@ A smart feedback tool designed to analyze and improve students' oral presentatio
 |--------------------------|-----------------------|-----------------------------------------|
 | **Audio Analysis**       | `Librosa`             | Audio feature extraction                |
 | **Speech-to-Text**       | `Whisper` (OpenAI)    | Accurate transcription of speech        |
-| **Voice Activity Detection** | `py-webrtcvad`     | Detects active speech segments          |
 | **NLP Feedback**         | `llaama 3`  | Generates natural language feedback     |
 | **UI**                   | `Streamlit` | Web-based interactive interface      |
 
