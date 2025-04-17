@@ -30,7 +30,6 @@ A smart feedback tool designed to analyze and improve students' oral presentatio
 | **Speech-to-Text**       | `Whisper` (OpenAI)    | Accurate transcription of speech        |
 | **Voice Activity Detection** | `py-webrtcvad`     | Detects active speech segments          |
 | **NLP Feedback**         | `llaama 3`  | Generates natural language feedback     |
-| **Emotion Detection**    | `SpeechBrain`  | Predicts emotional tone from voice |
 | **UI**                   | `Streamlit` | Web-based interactive interface      |
 
 ---
